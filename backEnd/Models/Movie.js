@@ -11,11 +11,14 @@ const MovieSchema = new mongoose.Schema({
   year: {
     type: String,
   },
-  score: {
-    type: Number,
+  scoreImbd: {
+    type: String,
+  },
+  metaScore: {
+    type: String,
   },
   genre: {
-    type: [String],
+    type: String,
   },
   duration: {
     type: String,
@@ -23,8 +26,7 @@ const MovieSchema = new mongoose.Schema({
   imBdId: String,
   image: String,
   country: String,
-  actors: [String],
-  country: [String],
+  actors: String,
   director: String,
 });
 
