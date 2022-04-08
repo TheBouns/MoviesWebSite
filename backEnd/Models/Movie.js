@@ -12,7 +12,7 @@ const MovieSchema = new mongoose.Schema({
     type: String,
   },
   scoreImbd: {
-    type: String,
+    type: Number,
   },
   metaScore: {
     type: String,

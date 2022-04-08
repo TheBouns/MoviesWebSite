@@ -1,6 +1,4 @@
 const axios = require("axios");
-const { response } = require("express");
-const { findById } = require("../Models/Movie");
 const Movie = require("../Models/Movie");
 
 const MovieController = {
@@ -19,7 +17,7 @@ const MovieController = {
           title: data.Title,
           description: data.Plot,
           year: data.Year,
-          scoreImbd: data.imdbRating,
+          scoreImbd: Number(data.imdbRating),
           metaScore: data.Metascore,
           genre: data.Genre,
           duration: data.Runtime,
@@ -67,11 +65,25 @@ const MovieController = {
       const selected = movies.filter((item) => {
         if (item.genre.indexOf(req.params.genre) != -1) return item;
       });
-      console.log("hey");
       res.send(selected);
     } catch (error) {
       console.error(error);
     }
+  },
+  async findByActor(req, res) {
+    try {
+      const movies = await Movie.find();
+      const selected = movies.filter((item) => {
+        if (item.actors.indexOf(req.params.actor) != -1) return item;
+      });
+      res.send(selected);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  async sortByScore(req, res) {
+    const movies = await Movie.find().sort({ scoreImbd: -1 });
+    res.send(movies);
   },
 };
 
