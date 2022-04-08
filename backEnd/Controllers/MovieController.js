@@ -29,7 +29,7 @@ const MovieController = {
         });
       });
 
-      res.send("creacion de la base de datos completada");
+      res.send("DB created");
     } catch (error) {
       console.error(error);
     }
