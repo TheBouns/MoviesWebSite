@@ -67,6 +67,7 @@ const MovieController = {
       const selected = movies.filter((item) => {
         if (item.genre.indexOf(req.params.genre) != -1) return item;
       });
+      console.log("hey");
       res.send(selected);
     } catch (error) {
       console.error(error);
