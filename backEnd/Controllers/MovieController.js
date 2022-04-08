@@ -52,6 +52,26 @@ const MovieController = {
       console.error(error);
     }
   },
+  async findByImdbId(req, res) {
+    try {
+      const movie = await Movie.findOne({ imBdId: req.params.imBdId });
+      if (!movie) return res.send("Movie not avaible");
+      res.send(movie);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  async findByGenre(req, res) {
+    try {
+      const movies = await Movie.find();
+      const selected = movies.filter((item) => {
+        if (item.genre.indexOf(req.params.genre) != -1) return item;
+      });
+      res.send(selected);
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 module.exports = MovieController;
