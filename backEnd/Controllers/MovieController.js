@@ -93,7 +93,6 @@ const MovieController = {
           `http://www.omdbapi.com/?i=${req.body.imbdid}&apikey=f9068f22`
         );
         const data = response.data;
-        console.log(data);
         await Movie.create({
           title: data.Title,
           description: data.Plot,
