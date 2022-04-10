@@ -9,4 +9,5 @@ router.get("/search/:_id", MovieController.findById);
 router.get("/searchimbd/:imBdId", MovieController.findByImdbId);
 router.get("/search/genres/:genre", MovieController.findByGenre);
 router.get("/search/actor/:actor", MovieController.findByActor);
+router.get("/addmovie", MovieController.addMovie);
 module.exports = router;

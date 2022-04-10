@@ -85,6 +85,37 @@ const MovieController = {
     const movies = await Movie.find().sort({ scoreImbd: -1 });
     res.send(movies);
   },
+  async addMovie(req, res) {
+    const movie = await Movie.findOne({ imBdId: req.body.imbdid });
+    try {
+      if (!movie) {
+        const response = await axios.get(
+          `http://www.omdbapi.com/?i=${req.body.imbdid}&apikey=f9068f22`
+        );
+        const data = response.data;
+        console.log(data);
+        await Movie.create({
+          title: data.Title,
+          description: data.Plot,
+          year: data.Year,
+          scoreImbd: data.imdbRating !== "N/A" ? Number(data.imdbRating) : "",
+          metaScore: data.Metascore,
+          genre: data.Genre,
+          duration: data.Runtime,
+          imBdId: data.imdbID,
+          image: data.Poster,
+          director: data.Director,
+          actors: data.Actors,
+          country: data.Country,
+        });
+        res.send("Movie Added To WebSite :D");
+      } else {
+        return res.send("Movie already in DB");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 module.exports = MovieController;
