@@ -1,12 +1,36 @@
 const mongoose = require("mongoose");
-const ObjectId = mongoose.SchemaType.ObjectId;
+const ObjectId = mongoose.SchemaTypes.ObjectId;
 
 const UserSchema = new mongoose.Schema({
-  email: { type: String },
-  password: { type: String },
-  favourites: [{ type: ObjectId, ref: "Movie" }],
-  pending: [{ type: ObjectId, ref: "Movie" }],
-  age: { type: Number },
+  email: {
+    type: String,
+  },
+  password: {
+    type: String,
+  },
+  favourites: [
+    {
+      type: ObjectId,
+      ref: "Movie",
+    },
+  ],
+  pending: [
+    {
+      type: ObjectId,
+      ref: "Movie",
+    },
+  ],
+  age: {
+    type: Number,
+  },
+  verified: {
+    type: Boolean,
+    default: true,
+  },
+  admin: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const User = mongoose.model("User", UserSchema);

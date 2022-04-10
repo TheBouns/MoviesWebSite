@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/movies", require("./Routes/movies"));
+app.use("/user", require("./Routes/users"));
 
 const port = process.env.PORT;
 const mongo = process.env.MONGO_URI;
