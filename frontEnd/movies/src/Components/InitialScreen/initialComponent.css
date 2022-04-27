@@ -1,0 +1,34 @@
+#initial-container {
+  background-image: url("https://res.cloudinary.com/ducxt7zb3/image/upload/v1651071272/cinema-4153289_1920_vojxbf.jpg");
+  /* background-color: #121315; */
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.login-form {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+.login-form input[type="text"] {
+  width: 20%;
+  height: 3%;
+  background: none;
+  border: none;
+}
+.login-form input[type="password"] {
+  width: 20%;
+  height: 3%;
+  background: none;
+  border: none;
+}
+.login-form input[type="submit"] {
+  width: 25%;
+  height: 4%;
+}

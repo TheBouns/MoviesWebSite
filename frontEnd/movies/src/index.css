@@ -1,5 +1,12 @@
 body,
-ul {
+ul,
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
+body {
+  height: 100vh;
+}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
