@@ -20,9 +20,6 @@ const UserSchema = new mongoose.Schema({
       ref: "Movie",
     },
   ],
-  age: {
-    type: Number,
-  },
   verified: {
     type: Boolean,
     default: true,
