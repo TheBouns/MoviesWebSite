@@ -1,0 +1,50 @@
+#initial-container {
+  background-image: url("https://res.cloudinary.com/ducxt7zb3/image/upload/v1651071272/cinema-4153289_1920_vojxbf.jpg");
+  /* background-color: #121315; */
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.login-form {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  gap: 1em;
+}
+.login-form h2 {
+  font-size: 3em;
+}
+.login-form input[type="text"] {
+  width: 50%;
+  height: 10%;
+  text-indent: 1em;
+  border: none;
+  font-size: 1.5em;
+}
+.login-form input[type="password"] {
+  width: 50%;
+  height: 10%;
+  border: none;
+  text-indent: 1em;
+  font-size: 1.5em;
+}
+
+.form-button {
+  width: 50%;
+  height: 10%;
+  font-size: 1.5em;
+  background-color: #da970e;
+  border: none;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  -webkit-box-shadow: 0px 0px 6px 2px #ffffff;
+  box-shadow: 0px 0px 6px 2px #ffffff;
+}
