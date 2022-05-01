@@ -2,11 +2,18 @@ body,
 ul,
 h1,
 h2,
-h3 {
+h3,
+div {
   margin: 0;
   padding: 0;
 }
 body {
   height: 100vh;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+input[type="password"]:focus {
+  outline: none;
 }
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");

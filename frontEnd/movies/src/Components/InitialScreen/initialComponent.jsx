@@ -11,7 +11,11 @@ export const InitialComponent = () => {
         <h2>Sig in to M4Y</h2>
         <input type="text" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <input type="submit" value="Enter" />
+        {/* <a href="#">Forgot password?</a> */}
+        <div className="login-form-button">
+          <input type="submit" value="Register" className="register" />
+          <input type="submit" value="Enter" className="signin" />
+        </div>
       </form>
     </div>
   );
